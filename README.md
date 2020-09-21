@@ -1,3 +1,3 @@
 # PythonLearning
 Hi 
-this is my fist learning python online
+this is my first learning python online
