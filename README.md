@@ -1,10 +1,5 @@
 # PythonLearning
-Hi 
-this is my first learning python online
 
-Hi sir
+This docoument is about Udemy Python Developer in 2020:Zero to Mastery
 
-the second edit branch
-
-Hi 
-the treed edit branch
+will record course content
