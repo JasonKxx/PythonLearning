@@ -1,0 +1,138 @@
+20 #Math Functions
+https://docs.python.org/2/library/math.html
+
+22 #operator precedence
+
+# ()
+# **
+# */
+# +-
+
+23#Exercise:Operator Precedence
+
+https://repl.it/@aneagoie/Operator-Precedence#main.py
+
+hroughout the course, we will have many exercises to help you learn. Moving forward, these exercises will be attached to each video (if it has an exercise) which can be accessed in your Udemy video player under "resources". To get you comfortable using this feature, and the online Repl.it we are going to use, you can see the exercise for this lesson attached. Good luck and see you in the next video!
+
+For more information: 
+
+https://support.udemy.com/hc/en-us/articles/229603648-How-to-Access-And-Use-The-Course-Player
+
+24# Option :bin() and complex
+print(bin(5))
+print(int('0b101', 2))
+https://www.geeksforgeeks.org/python-int-function/
+
+
+25#Variables
+Python Keywords
+https://www.w3schools.com/python/python_ref_keywords.asp
+#constants
+
+26# Expressions vs Statements
+
+27# Augmented Assignment Operator
+some_value = 5
+some_value = some_value+2
+some_value += 3
+
+28#Strings
+
+long_string = '''
+ww
+wer
+twr
+'''
+print(long_string)
+#So the three single quotes is four long strings that I can keep going on multiple lines for example.
+
+29#String Concatenation
+print(' Hello '+'Jason')
+
+30#Type Conversion
+print(str(100))
+print(int(str(100)))
+
+a= str(100)
+b= int(a)
+c= type(b)
+print(c)
+print(b)
+
+31#Escape Sequences
+weather = "\t It\'s \"kind of \" sunny" \n hope you have a good day!!
+\t tab
+\n new line
+\ it is going to say all right whatever comes after this I recognize this symbol whatever comes after
+
+32# Formatted Strings
+
+name = 'Jason'
+age = 37
+
+This is a new feature of Python 3 by adding F to the beginning
+f : It's saying hey this is going to be a formatted string and I want you to just make these variables available
+
+print(f'hi {name}. You are{age} years old')
+print(' hi {}. You are {} years old'.format('Jason','37'))
+print(' hi {}. You are {} years old'.format('name','age'))
+print(' hi {1}. You are {0} years old'.format('name','age'))
+print(' hi {new_name}. You are {age} years old'.format(new_name='Cindy',age=15))
+
+33#String Indexes
+Because one of the most useful things you can do with strings is to access different part of a string
+selfish = '012345678910'
+print(selfish[3])
+# [start:stop]
+print(selfish[0:5])
+# [start:stop:stepover]
+print(selfish[0:9:3])
+
+print(selfish[1:])
+So the default is going to say go all the way to the end
+print(selfish[:5]
+So it starts as default zero and goes to five OK
+pring(selfish[::1])
+it's starting at zero when there's nothing.It ends whenever the string ends when there's nothing And then we're stepping over through it once
+print(selfish[-1])
+Let's find out I get 10 in Python the negative index means Hey start at the end of the string
+print(selfish[::-1]）
+So this is a very useful notation if you want to let's say reverse an order and if we want to let's
+print(selfish[::-2]）
+say skip by two click Run and you see that we're skipping by two now now hopeful your head doesn't hurt
+
+34#immutability
+
+selfish = '01234567'
+selfish[0]='8'
+print(selfish)
+That is I cannot change the value of this Once it's created I can't just immediately change it to eight.
+But for now just remember that you can't reassign part of a string
+
+selfish=selfish+'8'
+print(selfish)
+
+35#Buile-in Functions+ Methods
+https://docs.python.org/3/library/functions.html
+https://www.w3schools.com/python/python_ref_string.asp
+
+greet = 'hellloooo'
+print(greet[0:len(greet)])
+
+quote ='to be or not to be'
+print(quote.upper())
+print(quote.capitalize())
+You see that it capitalizes the beginning of the sentence 
+print(quote.find('be'))
+print(quote.replace('be', 'me'))
+
+36# Booleans
+print(bool(0)) False
+print(bool(1)) True
+
+37# Exercise:Type Conversion
+38# Developer fundamentals:II
+
+
+
+
