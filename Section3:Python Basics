@@ -132,7 +132,125 @@ print(bool(1)) True
 
 37# Exercise:Type Conversion
 38# Developer fundamentals:II
+https://realpython.com/python-comments-guide/
+Python Commenting Best Practices
 
+39#Exercise:Password Checker
+username = input('Please inpute your name :')
+password = input('Please input PWD :')
 
+password_length = len(password)
+hidden_password = '*' * password_length
+print(f'{username}, your password,{hidden_password}, is {password_length} letter long')
 
+40#List
+It's called list and list is an ordered sequence of objects that can be of any type.
+new_list = ['a', 'b', 'c']
+print(new_list[1])
+print(new_list[-2])
+print(new_list[1:3])
+new_list[0] = 'z'
+print(new_list)
 
+my_list = [1,2,3]
+bonus = my_list + [5]
+my_list[0] = 'z'
+print(my_list)
+print(bonus)
+
+41#List Slicing
+costco_cart = [
+  'fruit',
+  'chocolate',
+  'Tv',
+  'drink'
+]
+costco_cart[0]='water'
+new_cart = costco_cart 
+# this is important if you don't want costco_cart and new_cart use the same memory please use costco_cart[:]
+#i wamt create a copy use list slicing to copy this costco_cart cart and it's going to equal new cart so that now if I run
+new_cart[0]='why'
+print(costco_cart)
+print(new_cart)
+
+42#Matrix
+Well it's a two dimensional array
+matrix = [
+[1,2,3],
+[4,5,6],
+[7,8,9]
+]
+matrix = [
+[[1],2,3],
+[4,5,6],
+[7,8,9]
+]
+#matrices come up a lot in topics like machine learning or image processing for example a computer doesn't
+# using this list: 
+basket = ["Banana", 
+  ["Apples", ["Oranges","666"], "Blueberries"]
+  ];
+# access "Oranges" and print it:
+# You will find the answer if you scroll down to the bottom, but attempt it yourself first!
+
+print(basket[1][1][0])
+
+43#List Methods
+https://www.w3schools.com/python/python_ref_list.asp
+
+basket = [1,2,3,4,5]
+#Adding
+basket.insert(5, 100) #insert value after
+basket.append(100) #add a value to end of list
+basket.extend([100, 101]) #add value to end of list
+new_list = basket
+
+basket =[1,2,3,4,5]
+basket.append(100)
+print(basket)
+
+new_list = basket
+basket.insert(6,101)
+print(new_list)
+
+#removing
+basket.pop()
+basket.pop(1) #remove index
+basket.remove(5) %remove value
+#so remove we give it the value that we want to remove with Pop we give it the index that we want to
+new_list = basket.pop(4) #return basket index number 4
+print(new_list)
+new_list = basket.clear()
+
+44#List Methods2
+basket = ['a','b','c','d','e']
+basket.index(2) 
+print('d' in basket)
+print('i' in 'hi i am a enigger')
+print(basket.count('d'))
+
+45#List methods3
+basket = ['a','b','c','d','e']
+#basket.sort()
+print(sorted(basket))
+basket.reverse()
+basket.
+46# Common List patterns
+basket = ['a','x','b','c','d','e','d']
+basket.sort()
+basket.reverse()
+print(basket[::-1])
+ptint(list(range(1,100)))
+.join()
+actually something that works on strings it's a string method but it's often used this way.
+
+sentence = ' '
+new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'Jason'])
+new_sentence = ' '.join(['hi', 'my', 'name', 'is', 'Jason'])
+print(new_sentence)
+#fix this code so that it prints a sorted list of all of our friends (alphabetical). Scroll to see answer
+friends = ['Simon', 'Patty', 'Joy', 'Carrie', 'Amira', 'Chu']
+
+new_friend = ['Stanley']
+friends.extend(new_friend)
+print(sorted(friends))
