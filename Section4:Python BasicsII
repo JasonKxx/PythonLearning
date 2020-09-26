@@ -1,0 +1,189 @@
+#Section 4 :Python BasicsII
+59# Conditional Logic
+
+is_old = True
+is_licenced = True
+
+if is_old and is_licenced:
+  print(' you are old enough to drive')
+elif is_licenced:
+  print('you can drive now!')
+else:
+  print('you are not of age')
+print('checkchek')
+
+60# Indentation in python
+Python on the other hand is not just for styling that would do this
+
+61# Truth vs Falesy 
+https://stackoverflow.com/questions/39983695/what-is-truthy-and-falsy-how-is-it-different-from-true-and-false
+is_old = 'hello'
+is_licenced = 50
+
+print(bool(''))
+print(bool(0))
+
+62#Temary Opertor
+# condition_if_true if "condtion" else condition_if_else
+is_friend =True
+can_message = "message allowed" if is_friend else "not allowed
+
+63# Short Circuiting
+64# Logical Operators
+>
+<
+==
+>=
+<=
+!=
+not
+print(not(True)) #return False
+
+65#Exercise :Logical Operators
+is_magician = False
+is_expert = True
+is_magician = False
+is_expert = True
+
+if is_magician and is_expert:
+  print('you are a master magician')
+elif is_magician and not is_expert:
+  print('At least you\'re getting there')
+elif not is_magician:
+  print('You need magic powers')
+
+66# is vs ==
+Equals checks for the equality in "value" such as one two three
+"IS" actually checks if the location and memory where this value is stored is the same
+ 
+ a=[1,2,3]
+ b=[1,2,3]
+ print(a is b) #return flase B equals this and I check a is that B No they're created in a different memory space
+ 
+ 67# For Loops
+ for item in 'Zero to Mastery'
+ for item in [1,2,3,4,5] :
+  for x in ['a','b','c','d']:
+    print(item,x)
+68#Iterables
+#interable - itarable can be a list can be a dictionary can be a topple can be a set can be a string
+#interated - one by one to check each item in the collection
+user = {
+'name': 'Golem',
+'age': 5007,
+'can_swim':False
+}
+
+for item in user :
+for item in user.items():
+for item in user.values():
+for item in user.keys():
+for item in 50 # 50 is a number not interable
+ 
+ 69#Exercise:Tricky Counter
+ #Conter
+my_list = [1,2,3,4,5,6,7,8,9,10]
+count =0
+for c in my_list:
+  count = count + c
+print(count)
+
+70#range()
+#range
+
+#for number in range(1,10):
+  #print(number)
+
+# for number in range(1,10,3):
+#   print(number)
+
+# for number in range(10,0,-1):
+#   print(number)
+
+# for _ in range(2):
+#   print(list(range(10)))
+for x in range(1,10):
+  for y in range(1,10):
+    c=x*y
+    print(f'{x}*{y}={c}')
+
+71#enumerate()
+enumerate is useful for obtaining an indexed list:
+for i,char in enumerate(list(range(100))):
+  if char==50:
+    print(f'index of 50 is :{i}')
+
+72#While Loops
+i = 0
+while i < 50:
+  print(i)
+  #i = i + 1
+  i += 1
+  #break
+else:
+  print(f'done with all the work :{i}')
+73# While Loops2
+while True:
+  reponse = input('please in put something :')
+  if (reponse == 'exit'):
+    break
+Only if the loop is finished doing whatever it's doing without the breaks then let's take a break and
+
+74# break, continue pass
+When we use the "break" segment it breaks out of the current and closing loop
+it however with a "continue" what we're saying is hey whatever happens when you hit
+Run "pass" doesn't do absolutely anything it just essentially passes
+my_list =[1,2,3]
+for item in my_list:
+  continue
+
+i = 0
+while i<len(my_list):
+  print(my_list[i])
+  i += 1
+
+75# Our First GUI
+end:   string appended after the last value, default a newline
+I don't want a new line I just want well a string but an empty string and same over here
+But I also want to add a line between the lists of rows
+picture = [
+  [0,0,0,1,0,0,0],
+  [0,0,1,1,1,0,0],
+  [0,1,0,1,0,1,0],
+  [1,1,1,1,1,1,1],
+  [0,0,0,1,0,0,0],
+  [0,0,0,1,0,0,0],
+]
+
+for row in picture:
+  for pixel in row:
+    if (pixel == 1):
+      print('*', end='') #end='' 表示每個元素執行時不換行繼續執行到最後（預設是每個元素執行完後換行)
+    else:
+      print(' ', end='') #end='' 表示每個元素執行時不換行繼續執行到最後（預設是每個元素執行完後換行)
+  print('')# 表示每執行完一個row 即換行預設是end'\n'
+
+76#
+Developer fundamentals:IV
+#clean
+#readability
+#predicitability
+#DRY
+
+77# Exercise:Find Duplicates
+some_list = ['a','b','c','d','d','m','m','n','n']
+some_list = ['a','b','c','d','d','m','m','n','n']
+
+duplicates =[]
+for value in some_list:
+  if some_list.count(value) >1:
+    if value not in duplicates:#找到重復值後再確認是否在duplicates list裡，如果在就不會附加到duplicates,表示只會附加一次
+      duplicates.append(value)
+print(duplicates)  
+
+78#Functions
+def say_heloo():
+
+79#Parameters and Arguments
+
+
