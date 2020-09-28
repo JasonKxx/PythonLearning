@@ -182,8 +182,177 @@ for value in some_list:
 print(duplicates)  
 
 78#Functions
-def say_heloo():
+def say_hello():
+  print('hellooooo')
 
+say_hello()
 79#Parameters and Arguments
+So parameters are used when we define the function and arguments are used when we call the function
+Arguments are used as the actual values we provide to a function
 
+def say_hello(name, emoji): #define fuction
+  print(f'hellooooo {name} {emoji}')
+
+say_hello('Jason','Haha') #call the fuction
+say_hello('Kevin','Haha')
+say_hello('Jospher','Haha')
+
+80#Default Parameters and Keyword Arguments
+#parameters
+#default Parameters
+def say_hello(name='Jordan', emoji='XD'):
+  print(f'hellooooo {name} {emoji}')
+
+#positional arguments
+say_hello('Jason','TT')
+say_hello('Kevin','^^')
+say_hello('Jospher','WTF')
+
+#keyword arguments
+say_hello(name='Labom', emoji='UU')
+say_hello()
+say_hello('Jamie')
+
+81#Return
+The functions they always have to return something and 
+when they don't return anything like there's no return keyword here it automatically returns None
+def sum(num1, num2):
+  def another_func(n1, n2):
+    return n1+n2
+  return another_func(num1, num2)
+
+#A function should do one thing really well
+#A function should return something
+total = sum(20,43)
+print(total)
+
+82# Exercise:Tesla
+#1. Wrap the above code in a function called checkDriverAge(). Whenever you call this function, you will get prompted for age. 
+# Notice the benefit in having checkDriverAge() instead of copying and pasting the function everytime?
+
+#2 Instead of using the input(). Now, make the checkDriverAge() function accept an argument of age, so that if you enter:
+#checkDriverAge(92);
+#it returns "Powering On. Enjoy the ride!"
+#also make it so that the default age is set to 0 if no argument is given.
+
+def checkDriverAge(age=0):
+  age = input("What is your age?: ")
+
+  if int(age) < 18:
+	  print("Sorry, you are too young to drive this car. Powering off")
+  elif int(age) > 18:
+  	print("Powering On. Enjoy the ride!");
+  elif int(age) == 18:
+	  print("Congratulations on your first year of driving. Enjoy the ride!")
+checkDriverAge()
+
+83# Methods vs Functions
+Method has to be owned by something
+
+84#Docstrings
+def test(a):
+  '''
+  Info :this function tests and prints param a
+  '''
+  print(a)
+#help(test)
+print(test.__doc__)
+
+your functions so that when other people on your let's say team or co-workers come across your function
+
+85# Clean Code
+# clean code
+def is_even(num):
+  if num % 2 ==0:
+    return True
+  return False
+
+print(is_even(55))
+
+86#*args and **Kwargs
+#A star to here we're saying hey this can accept any number of positional arguments like this as many as I want
+So this way we can extend and use our star args to have enough a function that can accept any number
+ # *args **kwargs
+
+# *args **kwargs
+
+def super_func(*args, **kwargs):
+  total = 0
+  print(kwargs)
+  for item in kwargs.values():
+    total += item
+  
+  return sum(args) + total
+
+print (super_func(1,2,3,4,5, num1=2, num2=10))
+
+#Rule : params, *args, default parameters, **kwatgs
+
+def super_func(name, *args, i='hi', **kwargs)
+
+87# Execise:Functions
+def highest_even(li):
+  evens = []
+  for item in li:
+    if item % 2 ==0:
+      evens.append(item)
+  return max(evens)
+print(highest_even([10,2.,4,5,6,7,234,543,342,33,413]))
+
+88#Scope - What varibles do I have access to ?\
+
+def some_func():
+  total = 100 #only some_func() can be use
+print(total) # will be fail
+
+#Scope Rules
+def parent():
+  def confusion():
+    return sum
+  return confusion()
+
+print(parent())
+print(a)
+#1- Start with locals
+#2- Parent local ?
+#3- Global
+#4- Built in python functions
+
+90#Global Keyword
+#What varibles do I have access to ?
+total = 0
+
+def count(total):
+  total +=1
+  return total
+
+print(count(count(count(total))))
+#print(count(count(1)))
+#print(count(2))
+#print(3)
+
+#1- Start with locals
+#2- Parent local ?
+#3- Global
+#4- Built in python functions
+
+91# nonlocal Key word
+# Scope - what variables do I have access to?
+def outer():
+    x = "local"#
+    def inner():
+        nonlocal x #I want to jump up the scope to my parents scope my parent local and grab whatever you find in there
+        x = "nonlocal" #So when we say X equals non-local we're assigning this new string and replacing this local
+        print("inner:", x)
+    inner()
+    print("outer:", x)
+outer()
+
+#1 - start with local
+#2 - Parent local?
+#3 - global
+#4 - built in python functions
+
+92# Why Do we need scope?
+#Memory use and crash trublesheeting
 
