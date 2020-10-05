@@ -205,3 +205,6 @@ print(player1.run("king"))
 print(player2.shout())
 
 # print(type(player1))
+
+115# __init__
+
