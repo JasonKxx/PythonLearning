@@ -68,3 +68,84 @@ archer1 = Archer('Robin', 500)
 
 wizard1.attack()
 archer1.attack()
+
+# inheritance2
+# Inheritance allows new objects to take on the properties of existing objects.
+class User(object):
+    def sign_in(self):
+        print('logged in')
+
+
+class Wizard(User):  # I inherited from the user class this functionality
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'attacking with power of {self.power}')
+
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'attacking with arrows left- {self.num_arrows}')
+
+
+wizard1 = Wizard('Merlin', 50)
+archer1 = Archer('Robin', 500)
+
+wizard1.attack()
+archer1.attack()
+
+# wizard1 is an instance of wizard that is true
+print(isinstance(wizard1, Wizard))
+# because we've had to run this class to create wizard 1
+print(isinstance(wizard1, User))
+
+# 125 polymorphism
+class User(object):
+    def sign_in(self):
+        print('logged in')
+
+    def attack(self):
+        print('do nothing')
+
+
+class Wizard(User):  # I inherited from the user class this functionality
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        User.attack(self) # you can use attack methon from Class User
+        print(f'attacking with power of {self.power}')
+
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'attacking with arrows left- {self.num_arrows}')
+
+
+wizard1 = Wizard('Merlin', 50)
+archer1 = Archer('Robin', 500)
+
+
+def player_attack(char):
+    char.attack()
+
+
+# If I do player attack have Archer in here if I click Run you see that the same function gives me a different output
+# even though we're calling the same thing
+player_attack(wizard1)
+player_attack(archer1)
+
+for char in [wizard1, archer1]:
+    char.attack()
+
