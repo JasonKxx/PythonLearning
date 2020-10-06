@@ -1,0 +1,70 @@
+# 119 Deleveloper fundamentals
+
+class PlayerCharacter:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def run(self):
+        return (f'Hi sir my name is {self.name} and my old is {self.age}')
+
+
+player1 = PlayerCharacter('Jason', 33)
+
+print(player1.run())
+
+# 120 Encapsulation
+# encapsulation is the binding of data and functions that manipulate that data and
+# but using this way I'm combining things packaging things up into those instances
+
+# 121 Abstraction
+# player1.speak = 'BOOOO'
+# Any programmer can come along and just remove all my hard work and overwrite it like that.
+# 122 Private vs Public Variables
+
+class PlayerCharacter:
+    # So once again this double underscore is also a convention to let people know you shouldn't really touch
+    def __init__(self, name, age):
+        self._name = name
+        self._age = age
+
+    def speak(self):
+        print(f'My name is {self.name} and I am {self.age} years old')
+
+
+Player1 = PlayerCharacter('Jason', 77)
+
+print(Player1.speak())
+
+# We determined that hey if we see underscore in our code that most likely means that this should be a private variable
+
+# 123 Inheritance
+# Inheritance allows new objects to take on the properties of existing objects.
+class User():
+    def sign_in(self):
+        print('logged in')
+
+
+class Wizard(User):  # I inherited from the user class this functionality
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'attacking with power of {self.power}')
+
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def attack(self):
+        print(f'attacking with arrows left- {self.num_arrows}')
+
+
+wizard1 = Wizard('Merlin', 50)
+archer1 = Archer('Robin', 500)
+
+wizard1.attack()
+archer1.attack()
