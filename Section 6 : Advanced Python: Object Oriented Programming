@@ -208,3 +208,82 @@ print(player2.shout())
 
 115# __init__
 
+116# Given the below class:
+class Cat:
+    species = 'mammal'
+
+    def __init__(self, name, age=0):
+        self.name = name
+        self.age = age
+
+
+# 1 Instantiate the Cat object with 3 cats
+cat1 = Cat('Tiger', 3)
+cat2 = Cat('Pipi', 4)
+cat3 = Cat('mouster', 6)
+
+# 2 Create a function that finds the oldest cat
+
+
+def get_oldest_cat(*args):
+    return max(args)
+
+
+# 3 Print out: "The oldest cat is x years old.". x will be the oldest cat age by using the function in #2
+print(
+    f'The oldest cat is {get_oldest_cat(cat1.name, cat2.name, cat3.name)} years old')
+    
+    
+117#
+# 117 @classmethod and staticmethod
+https://www.makeuseof.com/tag/python-instance-static-class-methods/
+
+class PlayerCharacter:  # Create a Object
+    # Class Object Attribute
+    # Static Attribute This is going to be true and exist for all objects
+    membership = True
+
+    def __init__(self, name, age):
+        self.name = name            # attributes
+        self.age = age
+
+    def shout(self):
+        # we get this not because remember this is a function that doesn't return anything
+        print(f'my name is {self.name}')
+
+    @classmethod
+    # that is because adding things the first parameter just like cls
+    def adding_things(cls, num1, num2):
+        return cls('Teddy', num1 + num2)
+        # return num1+num2
+
+    @staticmethod
+    def adding_things2(num1, num2):
+        return num1 + num2
+
+
+# remember instantiate means is we're calling the class to create an object
+#player1 = PlayerCharacter('Jason', 17)
+#player2 = PlayerCharacter('Viki', 33)
+player3 = PlayerCharacter.adding_things2(2, 3)
+#print(player1.adding_things(2, 3))
+print(player3)
+
+# print(type(player1))
+
+# 118 Reviewing What We Know so Far
+class NameOfClass():
+    def __init__(self, param1, param2):
+        self.param1 = param1
+        self.param2 = param2
+    def method(self):
+        pass
+
+    @classmethod
+    def cls_method(cls, param1, param2):
+        pass
+
+    @staticmethod
+    def stc_method(param1, param2):
+        pass
+
