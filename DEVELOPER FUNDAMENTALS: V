@@ -196,3 +196,75 @@ my_cats = [Simon('Simon', 4), Sally('Sally', 11), Sharly('Sharly', 9)]
 my_pets = pets(my_cats)
 # 4 Output all of the cats walking using the my_pets instance
 my_pets.walk()
+
+
+# 127 Super()
+class User(object):
+    def __init__(self, email):
+        self.email = email
+
+    def sign_in(self):
+        print('logged in')
+
+
+class Wizard(User):  # I inherited from the user class this functionality
+    def __init__(self, name, power, email):
+        # User.__init__(self, email)#called User.__init__funcation and passed in the email that we passed in as an argument
+        # run super and super is referring to the superclass or the class above wizard which is user and this
+        # So our code looks even cleaner and all we pass is this and if we click Run
+        # super allows us to refer to user this way and not have to worry about passing self
+        super().__init__(email)
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print(f'attacking with power of {self.power}')
+
+
+wizard1 = Wizard('Merlin', 50, 'Merlin@gmail.com')
+print(wizard1.sign_in())
+print(wizard1.attack())
+print(wizard1.email)
+
+
+# 128introspection
+# means ability to determine the type of an object at runtime
+
+print(dir(wizard1))
+
+# We have a lot of these Dunder or magic methods that we haven't really talked about.
+
+# 129 Dunder magic methods
+class Toy():
+    def __init__(self, color, age):
+        self.color = color
+        self.age = age
+        self.my_item = {
+            'Book': 'HarryPoter',
+            'serise': 6
+        }
+
+    def __str__(self):
+        return f'{self.color}'
+
+    def __len__(self):
+        return 5
+
+    def __del__(self):
+        print('deleted the action_figure object!')
+
+    def __call__(self):
+        return 'Yess call'
+
+    def __getitem__(self, i):
+        return self.my_item[i]
+
+
+action_figure = Toy('Red', 10)
+print(action_figure.__str__())  # return action_figure.__str__ self.color
+print(str(action_figure))  # the same return action_figure.__str__ self.color
+print(len(action_figure))  # return action_figure.__len__ 5
+print(action_figure())  # return __call__ meth
+print(action_figure['Book'])  # return object Toy self.my_item index 'Book'
+#del action_figure
+
