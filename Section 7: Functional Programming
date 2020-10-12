@@ -103,3 +103,17 @@ my_list = [1, 2, 3]
 print(list(map(lambda item: item*2, my_list)))
 print(list(filter(lambda item: item % 2 == 0, my_list)))
 print(reduce(lambda acc, item: acc+item, my_list))
+
+# 142 Exercise Lambda Experssions
+# Square
+my_list = [5, 4, 3]
+print(list(map(lambda item: item**2, my_list)))
+
+# List Sorting
+
+a = [(0, 2), (4, 3), (10, -1), (9, 9)]
+# key for the sort function when I'm sorting through everything is I want it to iterate over each
+# item that I'm going to get
+a.sort(key=lambda x: x[1])
+print(a)
+
