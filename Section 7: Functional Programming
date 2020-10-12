@@ -1,0 +1,105 @@
+#136 map
+my_list = 0
+
+def multiply_by2(item):
+    # new_list = []
+    # for item in li:
+    #     new_list.append(item*2)
+    # return new_list
+    return item*2
+
+
+# Well it's because with map we no longer need to do this creation of a list then appending to a list.
+# So with the map I say hey I want you to run the function multiply by 2.
+# when I call (map) like this I want you to use this function at this memory address
+print(list(map(multiply_by2, [1, 2, 3])))
+#my list hasn't changed Remember a pure function is a function that doesn't affect the outside world
+print(list(map(multiply_by2, my_list)))
+print(my_list)
+
+# 137 filter
+# the filter function is going to try and receive a true and false value or a boolean value whether
+
+my_list = [1, 2, 3]
+
+
+def multiply_by2(item):
+    return item*2
+
+
+def check_odd(item):
+    return item % 2 == 0
+
+
+print(list(filter(check_odd, my_list)))
+print(my_list)
+
+# 138 zip
+# Zip like a zipper takes the two it dribbles and grabs the first item from each and zips them together
+my_list = [1, 2, 3, 4]
+your_list = [10, 20, 30]
+their_list = (5, 4, 3)
+
+
+def multiply_by2(item):
+    return item*2
+
+
+def check_odd(item):
+    return item % 2 == 0
+
+
+print(list(zip(my_list, your_list, their_list)))
+print(my_list)
+
+
+# 140 Execises map filter zip reduce
+from functools import reduce
+
+# 1 Capitalize all of the pet names and print the list
+my_pets = ['sisi', 'bibi', 'titi', 'carla']
+
+
+def Capitalize(string):
+    return string.upper()
+
+
+# print(list(map(Capitalize, my_pets)))
+
+# 2 Zip the 2 lists into a list of tuples, but sort the numbers from lowest to highest.
+my_strings = ['a', 'b', 'c', 'd', 'e']
+my_numbers = [5, 4, 3, 2, 1]
+
+# print(list(zip(my_strings, sorted(my_numbers))))
+
+# 3 Filter the scores that pass over 50%
+scores = [73, 20, 65, 19, 76, 100, 88]
+
+
+def Check_50(item):
+    return item >= 50
+
+
+# print(list(filter(Check_50, scores)))
+
+# 4 Combine all of the numbers that are in a list on this file using reduce (my_numbers and scores). What is the total?
+
+
+def accumulator(acc, item):
+    print(acc, item)
+    return acc+item
+
+
+print(reduce(accumulator, (my_numbers + scores)))
+print(my_numbers+scores)
+
+
+# 141 Lambda Experessions
+# Lambda expressions are one time anonymous functions
+# lambda param: action(param)
+from functools import reduce
+my_list = [1, 2, 3]
+
+print(list(map(lambda item: item*2, my_list)))
+print(list(filter(lambda item: item % 2 == 0, my_list)))
+print(reduce(lambda acc, item: acc+item, my_list))
