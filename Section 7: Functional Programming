@@ -126,4 +126,49 @@ my_list3 = [num*2 for num in range(0, 100)]
 my_list4 = [num**2 for num in range(0, 100) if num % 2 == 0]
 
 print(my_list4)
+# 144 Set Dictionary Comprehension
+
+# Set Comprehension
+my_list = {char for char in 'Hello'}
+my_list2 = {num for num in range(0, 100)}
+my_list3 = {num*2 for num in range(0, 100)}
+my_list4 = {num**2 for num in range(0, 100) if num % 2 == 0}
+
+print(my_list4)
+
+# Dictionary Comprehension
+
+simple_dict = {
+    'a': 4,
+    'b': 9
+}
+
+#my_dict={key:value**2 for key,value in [2,4,6]}
+
+my_dict = {k: v**2 for k, v in simple_dict.items() if v % 2 == 0}
+print(my_dict)
+
+my_dict2 = {num: num*2 for num in [2, 4, 5]}
+print(my_dict2)
+
+# 145 Exercise Comprehensions
+
+some_list = ['a', 'b', 'v', 'c', 'd', 'd', 'c', 'm', 'n', 'm']
+
+duplicates = []
+# for value in some_list:
+#     if some_list.count(value) > 1:
+#         if value not in duplicates:
+#             duplicates.append(value)
+
+
+duplicates = [x for x in some_list if some_list.count(x) > 1]
+print(duplicates)
+duplicates = set([x for x in some_list if some_list.count(x) > 1])
+# Set function is unique value
+# Because this is a function.So this is the set function that Python gives us
+print(duplicates)
+duplicates = list(set([x for x in some_list if some_list.count(x) > 1]))
+print(duplicates)
+
 
