@@ -1,0 +1,66 @@
+# 147 Decorators
+
+# But I'm not going to delete the function because Grete is still pointing to it.
+
+def hello(func):
+    func()
+
+
+def greet():
+    print('Hellooooo')
+    pass
+del hello()
+
+a = hello(greet)
+
+print(a)
+
+# 149 Decorators 2
+# def helllo():
+#     print('hellooooo')
+
+
+def my_decorator(func):
+    def wrap_func():
+        print('----------')
+        func()
+        print('----------')
+    return wrap_func
+
+
+# @my_decorator
+def hello():
+    print('hellooooo')
+
+
+# @my_decorator
+def bye():
+    print('See ya later')
+
+
+a = my_decorator(hello)
+a()
+
+
+# 150 Decorators3 Pattern
+
+def my_decorator(func):  # This is the decorator pattern
+    # def wrap_func(x, y):
+    def wrap_func(*args, **kwargs):
+        print('----------')
+        # So this function Hello gets past we then receive as argument the X
+        #func(x, y)
+        func(*args, **kwargs)
+        print('----------')
+    return wrap_func
+
+
+@my_decorator
+def hello(greeting, emoji=':('):  # And what if we had keyword arguments like default hi
+    print(greeting, emoji)
+
+
+# a = my_decorator(hello)
+# All we're doing is running my decorator Hello which now turns into their wrapped function
+# So the wrapped function accepts this parameter and then runs the function
+hello('hihihhii')
