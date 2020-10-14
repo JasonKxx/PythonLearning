@@ -1,0 +1,67 @@
+# 154 Error handling in Python
+# https://docs.python.org/3/library/exceptions.html
+while True:
+    try:
+        age = int(input('What is your age ?'))
+        10/age
+    except ValueError:  # Hey try this if there is an error do this.
+        print('please enter a number')
+    except ZeroDivisionError:
+        print('please enter age higher than 0')
+    else:  # if there is nowhere else do this
+        print('thank you !')
+        break
+        
+# Error Handing 2
+
+def sum(num1, num2):
+    try:
+        return num1/num2
+    except (TypeError, ZeroDivisionError) as err:
+        print(err)
+
+
+print(sum(1, 0))
+
+# 156 Exercises_Error Handling
+
+
+# finally says hey no matter what at the end of it all I want you to finally
+# do something let's see this in action if I do something
+
+while True:
+    try:
+        age = int(input('What is your age ?'))
+        10/age
+    except ValueError:  # Hey try this if there is an error do this.
+        print('please enter a number')
+        continue
+    except ZeroDivisionError:
+        print('please enter age higher than 0')
+        break
+    else:  # if there is nowhere else do this
+        print('thank you !')
+        break
+    finally:
+        print('ok , i am finally done')
+    print('can you hear me?')
+
+# 157 Error Handling 3
+
+while True:
+    try:
+        age = int(input('What is your age ?'))
+        10/age
+        raise ValueError('hey cut it out')
+
+    except ZeroDivisionError:
+        print('please enter age higher than 0')
+        break
+    else:  # if there is nowhere else do this
+        print('thank you !')
+        break
+    finally:
+        print('ok , i am finally done')
+    print('can you hear me?')
+
+
