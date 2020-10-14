@@ -1,0 +1,114 @@
+# 158 Generators
+my_list = list(range(1, 10))
+
+print(type(my_list))
+
+
+# 159 Generators 2
+# what does "yield" do you see yield pauses the function and comes back to it when we do something
+# you see yield Like I said before pauses the function and comes back to it when next is called so if it has a yield
+
+# 160 Generators performance
+# repl process died unexpectedly : signal :killed
+
+from time import time
+
+
+def performance(fn):
+    def wrapper(*args, **kawrgs):
+        t1 = time()
+        result = fn(*args, **kawrgs)
+        t2 = time()
+        print(f'took {t2-t1} s')
+        return result
+    return wrapper
+
+
+@performance
+def long_time():
+    print('1')
+    for i in range(10000000000):
+        i*5
+
+
+@performance
+def long_time2():
+    print('2')
+    for i in list(range(1000000000000)):
+        i*5
+
+
+long_time()
+long_time2()
+
+# 161 Under The Hood Of Generators
+
+def special_for(iterable):
+    # This iter function is going to allow us to use the next function on this iterable
+    iterator = iter(iterable)
+    while True:
+        try:
+            iterator*5
+            # check it out I loop through some ignorable objects using next and you see that this object exists the same memory space
+            next(iterator)
+        except StopIteration:
+            break
+
+
+class MyGen:
+    current = 0
+
+    def __init__(self, first, last):
+        self.first = first
+        self.last = last
+        # this line allows us to use the current number as the starting point for the iteration
+        MyGen.current = self.first
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if MyGen.current < self.last:
+            num = MyGen.current
+            MyGen.current += 1
+            return num
+        # In that case we're simply going to raise a stop iteration because there's no more things to iterate
+        raise StopIteration
+
+
+gen = MyGen(1, 100)
+for i in gen:
+    print(i)
+
+# 162 Fibonacci Numbers
+# Here is an example generator which calculates fibonacci numbers:
+# generator version
+def fib(number):
+    a = 0
+    b = 1
+    for i in range(number):
+        yield a  # yield hay and say Hey just give me whatever a is and then pause the function until the next part
+        temp = a  # let's say a temporary variable and this temp is going to hold on to whatever
+        a = b
+        b = temp + b
+
+
+for x in fib(21):
+    print(x)
+
+
+# def fib2(number):
+#     a = 0
+#     b = 1
+#     result = []
+#     for i in range(number):
+#         result.append(a)
+#         temp = a
+#         a = b
+#         b = temp + b
+#     return result
+
+
+# print(fib2(100))
+
+
