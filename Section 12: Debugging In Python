@@ -1,0 +1,17 @@
+# 180 debugging
+#https://docs.python.org/3/library/pdb.html
+
+#lining
+#lining allows us to detect as we code some issues with our code
+#ide/editor It allows us to detect errors in our code with let's say highlighting and formatting of our code
+#read errors
+#pdb built in python in python
+# PDB is extremely useful because it allows us to interact with the code
+import pdb
+
+def add(num1, num2):
+    pdb.set_trace()
+    t = 4 * 5
+    return num1 + num2
+
+add(5, 'ssrrt')
