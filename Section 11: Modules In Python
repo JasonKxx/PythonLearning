@@ -1,0 +1,97 @@
+# 169 __name__
+import random
+
+print(random.randint(1,20))
+print(random.random())
+print(random.choice([1,2,3,4,5,6]))
+
+my_list = [1,2,3,4,5,6]
+random.shuffle(my_list)
+print(my_list)
+
+# 170 Python Built-in Modules
+
+import sys
+sys.argv
+print(sys)
+
+#171 Python Built-in Modules 2
+
+from random import randint
+import sys
+
+
+# generate a number 1-10
+
+
+# input from user?
+
+# check that input is a number 1-10
+while True:
+    try:
+        answer = randint(int(sys.argv[1]), int(sys.argv[2]))
+        #print(f'Answer={type(answer)}')
+        guess = int(input('guess a number 1-10: '))
+        #print(f'Guess={type(guess)}')
+        #print(f'Whether Guess equal to Answer = {guess==answer}')
+        if 0 < guess < 11:
+            if guess == answer:
+                print('You are a genius')
+                break
+        else:
+            print('hey bozo , I said 1-10 ')
+    except ValueError:
+        print('please enter a number')
+        continue
+
+
+# check if number is the right guess. Otherwise
+# ask again
+
+#172 
+
+#174 pip install
+'''
+And it answers the question of hey how can we have two versions of all these packages of all these modules
+on the same machine and still have different projects using different versions
+pipenv
+end to install packages based on each project
+'''
+
+#176 Useful Modules
+
+from collections import Counter, defaultdict, OrderedDict
+
+li = [1,2,3,4,5,6,7,7,8,8,9,3]
+print(Counter(li)) #count the date display times
+
+dictionary = defaultdict(lambda: 'dose not exist' ,{'a':1, 'b':2})#if the key is not exist show lambda data
+
+print(dictionary['c'])
+
+d = OrderedDict()
+d['a'] = 1
+d['b'] = 2
+
+d2 = {'c':15}
+d2['a'] = 1
+d2['b'] = 2
+#There's no guarantee that when we print out all the keys that we're gonna get them in order
+print(d2 == d)
+
+
+#178 Useful Modules 2
+
+import datetime
+from array import  array
+
+# array vs list but there are a little bit different
+#is because when we create an array it sets how much memory we can use in our machine
+#https://stackoverflow.com/questions/176011/python-list-vs-array-when-to-use
+arr = array('i', [1,2,3])
+print(datetime.date.today())
+
+#
+
+
+
